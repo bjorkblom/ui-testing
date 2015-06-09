@@ -1,0 +1,6 @@
+bower_components/
+node_modules/
+gl.config.js
+gl.js
+.idea
+app/scripts/libs/

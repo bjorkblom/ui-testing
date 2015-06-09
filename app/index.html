@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>UI-Tests</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-login-form container" data-ng-controller="PasswordController">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="username" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" id="username" placeholder="Username" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-5">
+                    <input type="password" id="password" placeholder="Password" data-ng-model="password" data-ng-change="grade()" class="form-control" />
+                </div>
+                <div class="col-sm-5">
+                    <p class="form-control-static">Password strength: {{strength}}</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-10 col-sm-offset-2">
+                    <button data-ng-click="login()" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="logged-in" data-ng-if="loggedIn">
+            Logged in successfully
+        </div>
+    </div>
+    <script src="scripts/libs/jquery.min.js"></script>
+    <script src="scripts/libs/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
