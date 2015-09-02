@@ -92,8 +92,8 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('e2e.tests', ['connect', 'protractor', 'watch:protractor']);
-    grunt.registerTask('ui.tests', ['connect', 'galen', 'watch:karma']);
+    grunt.registerTask('e2e.tests', ['connect', 'protractor']);
+    grunt.registerTask('ui.tests', ['connect', 'galen']);
     grunt.registerTask('client.tests', ['karma', 'watch']);
 
     grunt.loadNpmTasks('grunt-contrib-watch');
