@@ -1,7 +1,7 @@
 exports.config = {
   capabilities: {
-    'browserstack.user' : 'andreasbjrkblom2',
-    'browserstack.key' : 'b8JVnaGmxc3pGueLumbJ',
+    'browserstack.user' : 'xxx',
+    'browserstack.key' : 'xxx',
     'browserstack.local' : 'true',
     'browserstack.debug': 'true',
     
