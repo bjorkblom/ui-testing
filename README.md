@@ -1,12 +1,8 @@
 # ui-testing
 UI-Testing
 
-#Client unit testing:
-## Install Karma:
-```$ npm install karma --save```
-
 ## Install plugins that your project needs:
-```$ npm install karma-jasmine karma-chrome-launcher --save```
+```$ npm install```
 
 #E2E testing
 ```$ node node_modules/protractor/bin/webdriver-manager update```
@@ -15,6 +11,8 @@ UI-Testing
 ```$ bower install angular-mocks -save```
 
 #Run tests
-Client tests: ```$ grunt client.tests```
-E2E tests: ```$ grunt e2e.tests```
-UI tests: ```$ grunt ui.tests```
+- Client tests: ```$ grunt client.tests.local```
+- Client tests on browserstack: ```$ grunt client.tests.browserstack```
+- Client tests on crossbrowser: ```$ grunt client.tests.crossbrowser```
+- E2E tests: ```$ grunt e2e.tests```
+- UI tests: ```$ grunt ui.tests```
