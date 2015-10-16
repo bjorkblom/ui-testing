@@ -25,9 +25,19 @@ module.exports = function (grunt) {
                 keepAlive: true,
                 noColor: false
             },
-            e2e: {
+            local: {
                 options: {
                     configFile: "e2e.tests/e2e.conf.js"
+                }
+            },
+            browserstack: {
+                options: {
+                    configFile: "e2e.tests/browserstack.conf.js"
+                }
+            },
+            crossbrowser: {
+                options: {
+                    configFile: "e2e.tests/crossbrowser.conf.js"
                 }
             }
         },
@@ -37,7 +47,7 @@ module.exports = function (grunt) {
                 src: ['ui.tests/app.js'],
                 options: {
                     // Run test on the localhost:3000
-                    url: 'http://localhost:9001',
+                    url: 'http://localhost:9002',
                     devices: {
 
                         // Run tests in firefox browser, scaled to basic desktop resolution
@@ -60,8 +70,17 @@ module.exports = function (grunt) {
         connect: {
             server: {
                 options: {
-                    port: 9001,
+                    hostname: '*',
+                    port: 9002,
                     base: 'app'
+                }
+            },
+            keepalive: {
+                options: {
+                    hostname: '*',
+                    port: 9002,
+                    base: 'app',
+                    keepalive: true
                 }
             }
         },
@@ -92,8 +111,10 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('e2e.tests', ['connect', 'protractor']);
-    grunt.registerTask('ui.tests', ['connect', 'galen']);
+    grunt.registerTask('e2e.tests.local', ['connect:server', 'protractor:local']);
+    grunt.registerTask('e2e.tests.browserstack', ['connect:server', 'protractor:browserstack']);
+    grunt.registerTask('e2e.tests.crossbrowser', ['connect:server', 'protractor:crossbrowser']);
+    grunt.registerTask('ui.tests', ['connect:server', 'galen']);
     grunt.registerTask('client.tests', ['karma', 'watch']);
 
     grunt.loadNpmTasks('grunt-contrib-watch');

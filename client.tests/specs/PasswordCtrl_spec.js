@@ -18,7 +18,7 @@ describe('PasswordController', function() {
         });
 
         it('sets the strength to "weak" if the password length <3 chars', function() {
-            $scope.password = 'a';
+            $scope.password = '';
             $scope.grade();
             expect($scope.strength).toEqual('weak');
         });

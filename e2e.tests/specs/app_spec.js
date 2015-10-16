@@ -1,6 +1,6 @@
 describe('login form', function() {
     it('should be possible to login', function() {
-        browser.get('http://localhost:9001');
+        browser.get('http://127.0.0.1:9002');
 
         element(by.css('.user-login-form input[type=text]')).sendKeys("username");
         element(by.css('.user-login-form input[type=password]')).sendKeys('password');
